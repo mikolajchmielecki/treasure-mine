@@ -43,6 +43,7 @@ public class Simulation {
     }
 
     public void run() {
+        treasureThreads.forEach(t -> t.start());
         treasureThreads.forEach(t -> circles.add(t.getTreasure()));
         treasureThreads.forEach(t -> treasures.add(t.getTreasure()));
 
