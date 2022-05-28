@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="treasure-mine:jar">
+    <output-path>$PROJECT_DIR$/out</output-path>
+    <root id="archive" name="treasure-mine.jar">
+      <element id="module-output" name="etap2" />
+    </root>
+  </artifact>
+</component>
