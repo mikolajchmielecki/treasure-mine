@@ -3,6 +3,7 @@ package pl.edu.pwr.mine.thread;
 import pl.edu.pwr.mine.model.Treasure;
 import pl.edu.pwr.mine.view.CirclesPanel;
 
+import javax.swing.*;
 import java.awt.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -38,8 +39,10 @@ public class TreasureThread extends Thread {
             try {
                 sleep(refreshTime);
             } catch (InterruptedException e) {
-                // TODO Auto-generated catch block
-                e.printStackTrace();
+                JOptionPane.showMessageDialog(panel,
+                        e.getMessage(),
+                        "Error",
+                        JOptionPane.ERROR_MESSAGE);
             }
 
             if (!treasure.getState()) {
@@ -49,8 +52,10 @@ public class TreasureThread extends Thread {
                     treasure.setX(random.nextInt(frameWidth));
                     treasure.setY(random.nextInt(frameHeight));
                 } catch (InterruptedException e) {
-                    // TODO Auto-generated catch block
-                    e.printStackTrace();
+                    JOptionPane.showMessageDialog(panel,
+                            e.getMessage(),
+                            "Error",
+                            JOptionPane.ERROR_MESSAGE);
                 }
             }
         }

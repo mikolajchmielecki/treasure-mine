@@ -4,6 +4,7 @@ import pl.edu.pwr.mine.model.Miner;
 import pl.edu.pwr.mine.model.Treasure;
 import pl.edu.pwr.mine.view.CirclesPanel;
 
+import javax.swing.*;
 import java.awt.*;
 import java.util.List;
 
@@ -31,12 +32,13 @@ public class MinerThread extends Thread {
                 miner.setSpeedToTreasure();
             }
             miner.go();
-            //panel.repaint(kolo.getRectangle());
             try {
                 sleep(refreshTime);
             } catch (InterruptedException e) {
-                // TODO Auto-generated catch block
-                e.printStackTrace();
+                JOptionPane.showMessageDialog(panel,
+                        e.getMessage(),
+                        "Error",
+                        JOptionPane.ERROR_MESSAGE);
             }
         }
     }
