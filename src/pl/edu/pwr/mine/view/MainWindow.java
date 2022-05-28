@@ -1,12 +1,16 @@
+package pl.edu.pwr.mine.view;
+
+import pl.edu.pwr.mine.model.Circle;
+
 import javax.swing.*;
 import java.util.List;
 
-public class Okienko1 extends JFrame {
+public class MainWindow extends JFrame {
 
-    private Panel1 panel;
+    private CirclesPanel panel;
 
-    public Okienko1(List<Kolo> kola, int width, int height) {
-        panel = new Panel1(kola, width, height);
+    public MainWindow(List<Circle> circles, int width, int height) {
+        panel = new CirclesPanel(circles, width, height);
         add(panel);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         pack();
@@ -21,7 +25,7 @@ public class Okienko1 extends JFrame {
         panel.repaint();
     }
 
-    public Panel1 getPanel() {
+    public CirclesPanel getPanel() {
         return panel;
     }
 }
